@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  server:
+    build: .
+    container_name: cgit
+    restart: always
+    volumes:
+      - ./cgitrc:/etc/cgitrc
+      - /srv/git:/srv/git
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8080:80"
+    environment:
+      - USE_CUSTOM_CONFIG=true

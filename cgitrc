@@ -1,0 +1,51 @@
+# CGit config file (cgitrc)
+# For all supported settings see https://linux.die.net/man/5/cgitrc
+
+root-title=CGit @ git.example.com
+root-desc=The hyperfast web frontend for Git repositories
+
+source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
+about-filter=/usr/lib/cgit/filters/about-formatting.sh
+
+#
+# Search for these files in the root of the default branch of repositories
+# for coming up with the about page:
+#
+readme=:README.md
+readme=:readme.md
+readme=:README.txt
+readme=:readme.txt
+readme=:README
+readme=:readme
+
+# Default Theme
+css=/cgit.css
+logo=/cgit.png
+logo-link=https://git.example.com
+footer=/usr/share/webapps/cgit/footer
+
+# Cache
+cache-root=/var/cache/cgit
+cache-size=2000
+
+# Clone
+clone-url=https://git.example.com/$CGIT_REPO_URL
+
+enable-index-links=1
+enable-index-owner=0
+enable-remote-branches=1
+enable-log-filecount=1
+enable-log-linecount=1
+enable-git-config=1
+enable-http-clone=0
+snapshots=tar.gz
+
+robots=noindex, nofollow
+
+virtual-root=/
+
+section-from-path=0
+
+max-repo-count=50
+
+scan-path=/srv/git
